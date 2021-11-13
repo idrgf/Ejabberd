@@ -1,0 +1,2 @@
+# Ejabberd
+Command Bash
