@@ -1,2 +1,4 @@
 # Ejabberd
-Command Bash
+Script Bash
+
+Projet réalisé par Liasse Ali YALAOUI & Sami HENINI.
