@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Menu selection du choix
-echo "séléctionnez votre choix: "
+echo "Bienvenue sur Ejabberd.sh, faites un choix ou appuyez sur n'importe quel caractère pour quitter : "
 
 ##########################  FONCTIONS  ##########################
 
@@ -29,7 +29,7 @@ function Install_Ejabberd () {
 
     else
         #Si wget n'est pas installé
-        read -p "wget n'est pas installé.\n Tapez [1] pour l'installer sinon tapez n'importe quelle touche." wg
+        read -p "wget n'est pas installé.\n Tapez [1] pour l'installer sinon tapez sur n'importe quel caractère." wg
 
         if [[ $wg -eq 1 ]]; then
             apt-get install wget
@@ -43,8 +43,8 @@ function Install_Ejabberd () {
 
 function Create_User () {
     #On demande un nom et un mot de passe
-    read -p "veillez entrer un nom " user
-    read -p "veillez entrer un mdp " password
+    read -p "Veuillez entrer un nom " user
+    read -p "Veuillez entrer un mdp " password
     
     #On entre dans le dossier bin
     cd /opt/ejabberd-21.07/bin
@@ -61,15 +61,20 @@ function Desinstall_Ejabberd () {
     sudo apt-get remove --purge ejabberd
 }
 
+function Bye () {
+    echo "Au revoir, et n'oubliez pas de nous mettre 20 :) "
+    exit 2
+}
+
 
 ##########################  ON APPELLE NOS FONCTIONS  ##########################
 
 #Boucle infini
 while true
     do
-        echo "1- Installer Ejabberd tapez -------> [1]"
-        echo "2- Créer des utilisateurs tapez ---> [2]"
-        echo "3- Désinstaller Ejabberd tapez ----> [3]"
+        echo "1- Installer Ejabberd     tapez -------> [1]"
+        echo "2- Créer des utilisateurs tapez -------> [2]"
+        echo "3- Désinstaller Ejabberd  tapez -------> [3]"
         read CHOICE
 
     #Afin d'éviter des if à répétition nous utilisons dans ce cas #case
@@ -79,6 +84,6 @@ while true
         1) Install_Ejabberd;;
         2) Create_User;;
         3) Desinstall_Ejabberd;;
-        *) break;;
+        *) Bye;;
     esac
 done
