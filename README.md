@@ -1,7 +1,8 @@
 # Ejabberd
+
 Script Bash Guide
 
-Projet réalisé par Liasse Ali YALAOUI & Sami HENINI sous debian 11 "Bullseye" avec une machine virtuelle.
+Projet réalisé par Liasse Ali YALAOUI & Sami HENINI sous debian 11 "Bullseye" avec une machine virtuelle (VMware Workstation 16 pro).
 
 Lors du lancement du projet, 3 choix vous seront proposé au menu:
 
